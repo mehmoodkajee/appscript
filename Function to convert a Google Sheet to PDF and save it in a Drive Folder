@@ -1,0 +1,8 @@
+function convertSheetToPDF() {
+    
+  let destinationFolder = DriveApp.getFolderById("FOLDER ID OF THE GOOGLE DRIVE FOLDER YOU WOULD LIKE TO SAVE THE PDF TO"); 
+  let file = DriveApp.getFileById('ENTER THE SHEETS FILE ID');
+  let blob = file.getBlob().getAs('application/pdf');
+  DriveApp.createFile(blob).makeCopy("Name Of the New PDF Files ", destinationFolder);
+
+} 
